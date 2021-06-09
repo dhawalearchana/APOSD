@@ -1,0 +1,23 @@
+** Design it Twice **
+
+~~ Section 11.1 ~~
+
+Software design should be more of a common-sense.
+Common sense, apparently, is not so common.
+
+So, it makes sense to spend extra time on the system, and Design it Twice!
+No matter how smart you are, chances are slim that your first design will be the best design.
+More so if problem is hard. 
+
+Try to compare radically different approaches to one-another - weigh their pros and cons.
+
+Design it twice can be applied at many levels. For example, Interface and Implementation
+
+Interafce:
+- Is one interface simpler than another? Is it more general purpose? Which one enables more efficient implementation?
+
+Implementation:
+- Is it simpler than another approach? Performance trade-offs? Impact on higher level goals?
+
+To the contrary belief, it does not take lot of time. 
+Also, what works in reality is to peer-design. Befriend folks who can constructively (or not 😉) challenge your design decisions.
