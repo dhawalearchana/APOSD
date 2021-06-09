@@ -1,0 +1,51 @@
+** Modules Should Be Deep **
+
+~~ Section 4.1 ~~
+
+A module is any unit of code that has an interface and an implementation.
+Each Module, such as class, subsystem or a service, should be as independent of other modules as possible.
+We learned earlier as well - dependencies cannot be eliminated completely.
+
+So, to manage dependencies, each module is thought of interface and implementation.
+
+Interfaces make promises, implementations carries those out.
+One should aim to make interfaces simpler. In the process, if implementation gets comparatively complicated, that is okay.
+
+Interfaces generally give-out formal information, such as method signature. That is essential for user of the interface.
+This type of information can be checked for accuracy by language tools such as compilers, etc.
+
+Interfaces also have informal information to give-out. For example, if implementation changes state of a global flag.
+It also includes all everything that user of the interface needs to know.
+The informal information has to be communicated via comments or documentation. Language tools are usually insufficient for detecting those.
+
+
+~~ Section 4.2 ~~
+
+Abstraction is a simplified view of an entity, which omits unimportant details.
+What is unimportant? Its subjective, but should be collectively agreed upon by a group of people working on the system.
+
+Leave out important details out of the abstraction - you have an obscure system.
+Add more details than required, its not an abstraction anymore.
+
+Obviously, abstractions are everywhere - the folks working on #startups - their #ideas always start abstract.
+
+
+~~ Section 4.3 ~~
+
+How should your modules look?
+
+Deeeeep..
+
+The notion on depth is proportional to number of responsibilities bore by the module.
+
+At the same time, your interfaces should be simple. Interfaces is the cost of the functionality of the module.
+
+Complex interface with deep module is hardly helpful.
+
+If amount of functionality is not that much, its called a shallow module.
+You must have experienced this - in order to change a simple thing, you'd have to open 4-5 interfaces, see who is calling whom, etc.
+
+There has been a trend that modules, that is classes or functions should be small, not deep.
+If module is greater than N lines, you are encouraged to break it into multiple modules.
+This results in many shallow modules, increases codebase unnecessarily, increasing the complexity of the system.
+
