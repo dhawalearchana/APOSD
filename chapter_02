@@ -1,0 +1,65 @@
+** The Nature of Complexity **
+
+~~ Section 2.1 ~~
+
+Complexity of a system: Anything related to the structure of a software that makes it harder to understand and modify.
+Lots of efforts to launch, unclear which parts to modify when, are some experiences of complex systems.
+
+Complexity is something engineers experience while trying to achieve a particular goal.
+People often mistakenly consider overall size or number of functionalities as defining characteristics.
+This is wrong.
+
+If system has few complex components, but those almost never need to be touched AND components are easy to use, the overall system is not complex.
+
+Complexity of overall system is a summation of complexity of each component, weighted by amount of time developer spends working on that component.
+
+Some real-life examples:
+A team where its hard to attribute accountability, and/or its difficult to shuffle people around to align to a new related task, is a complex team.
+
+Against
+A #team with 1 or 2 members doing complex things,
+But - they get the job done and their output is easily consumable by other members.
+This is a much simpler team due to isolating the complexity.
+
+
+
+~~ Section 2.2 ~~
+
+How do you detect complexity? Following are the symptoms with some examples.
+
+1. Change amplification: When seemingly simple change needs a lot of code modifications in several places.
+If you follow agile, and ETA for a task was around 1 day, but later discovered that will take at least a week due to accumulated changes in the system, its a sign.
+
+2. Cognitive load: How much does one need to know to complete the task? This is unrelated to lines of code.
+Sometimes, more code actually makes it simpler by reducing cognitive load.
+This is often bore by #managers and #architects as well. With lot of load, human error occurs much sooner than anticipated, and then its a downhill path.
+On a tangent note, that is what it takes to be #entreprenuer - ability to handle high cognitive load.
+
+3. Unknown unknowns: You need to know something to do the task, but you don't know what that is.
+Sometimes, you do not even know you need to know something to complete the task.
+This is the worst one. First two are costly, but manageable. With this, since you don't know that you don't know, you are unsure if solution will even work.
+
+
+
+~~ Section 2.3 ~~
+(Causes of complexity)
+
+Just two things cause complex systems:
+
+1. Dependencies: Something cannot be understood or modified in isolation. Function signatures is undisputed form of a dependency.
+Note that this cannot be completely eliminated. Can you build a #startup by not trusting and depending on the #stakeholders?
+Problem is not the dependencies, we don't want unobvious and complicated ones.
+
+2. Obscurity: Caused when important information is not obvious.
+Have faced too vague or generic variable names, or lack of #documentation? That was an obscure system.
+Inconsistencies in the design and #coding is the core reason behind such systems.
+They also causes need of piles of documentation in the first place.
+
+Dependencies cause change amplification and cognitive load whereas obscurity causes unknown unknowns.
+We discussed this in the previous post here: https://rb.gy/hgvkdj
+
+Complexity is incremental - it accumulate in smaller chunks.
+Therefore its hard to control. Given a single modification, it might be tempting to say 'No Big Deal' for this change.
+Understand - it IS a big deal. You need to have a Zero Tolerance #philosophy.
+
+
