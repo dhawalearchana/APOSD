@@ -1,0 +1,49 @@
+** Working Code Isn’t Enough **
+(Strategic vs. Tactical Programming)
+
+~~ Section 3.1 ~~
+
+"Somehow, I need to get this working and push to production", said Joe.
+Its relatable and reasonable - code works! Then, what's wrong?
+
+Finishing something as quickly misses planning for future.
+Wrong is going to haunt the #team in the future.
+Its nearly impossible to produce good design with this style, called Tactical Programming.
+
+Sometimes, this is rewarded for speed of producing features. But the mess is usually handled by future engineers.
+
+One single occurrence is surely going to look insignificant. But many such changes are going to have a compounded effects in terms of system complexity.
+At times, impulse tells you 'go back', 'refactor', but - there is no time. So you patch things, deliver current feature, and say, 'Hey, code works!'
+
+We need to understand this - Working Code Is Not Enough. Thrive to produce a great design every single time, whose code also works.
+This is called Strategic Programming.
+
+So, next time you are writing some code, think of some alternatives based on how you perceive future system, and then choose one.
+Writing good documentation is another huge investment.
+
+
+
+
+~~ Section 3.2 ~~
+
+There are going to be problems with your system design.
+
+Yes. Even if you use Strategic Programming.
+Do not patch around things. Refactor, redesign.
+
+This is like an investment.
+These will slow you down in the short run, but definitely speed you up in the long run.
+
+How much time to invest in designing?
+Huge upfront time? No - that's waterfall - it doesn't work We saw it last week.
+
+Invest on a continual basis, cumulating to around 10-20% of total development time.
+
+If you don't do strategic programming, the tactical programming will appear faster initially, but soon strategic programming will overtake it.
+See the figure.
+
+This specifically applies to #startups . Fight the rationale - deliver quickly, get the #funding, then will have time and people to cleanup.
+This r a r e l y works.
+First - hiring is difficult even when you have money. Second, if you need best engineers - they care about design. If yours is bad, they are unlikely to hang around for long.
+
+
