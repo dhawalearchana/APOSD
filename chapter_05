@@ -1,0 +1,60 @@
+** Information Hiding (and Leakage) **
+~~ Section 5.1 ~~
+
+How to create deep modules?
+
+Hide the information and avoid the leakage.
+
+Module's implementation might be doing very many number of things.
+This includes #datastructures, #algorithms, assumptions about entity's characteristics, etc.
+This information should be irrelevant or invisible to the user of the module.
+
+Information hiding helps in two ways - you have to make modules more abstract. That reduces cognitive load of user of your module.
+Second, its easier to iterate. As long as same contract is respected by callee and caller, you can change the implementation from hard-coded rule-engine with a #machinelearning model.
+
+The more information you hide in the implementation, interface becomes simpler and module becomes deeper.
+
+OTOH, information leakage happens when a design decision is reflected in multiple modules.
+If it is present in the interface, by definition, it is leaked.
+There are other, more dangerous ways of leaking the information - remember the information that we have to give-out in the form of comments and documentation?
+
+When same knowledge is used in multiple places, and computation is performed upon that, information leak has occurred.
+
+
+
+~~ Section 5.2 ~~
+
+First X happens in the system, then Y happens, and then Z.
+
+This is a typical user or a system flow.
+
+If this gets reflected in the system design, it usually a causes information leakage.
+
+For example, breaking the system into three different #microservices for the example above.
+More likely, there is sequence of doing something and then sequence of undoing something, which should be part of same microservice.
+
+Its natural to fall for this, as the sequence playing in your head as of now.
+But - several manifestations of same requirement is not rare, and future temporal sequences are probably going to be different.
+
+At that time, the second module onward in the sequence assume a lot of characteristics of prior modules, and have to be coded in that fashion.
+This creates the need to leak the information.
+
+So instead of this Temporal Decomposition, one needs to focus on knowledge that is needed to perform the task, and not the order of occurrence..
+
+
+
+~~ Section 5.3 ~~
+
+Some guidelines for better hiding information in the implementation of the interface:
+
+1. Try avoiding creating too many classes. Making classes slightly larger helps with hiding the information.
+2. Avoid exposing internal data structures as much as possible. Internally storing a map? Don't add it as it is to the response.
+3. Don't ask users of your interface to send the parameters that they might not be knowing best values of. Instead, use default parameters.
+If something is rarely used, that is a good candidate to use default parameter.
+4. To minimize dependency within a class, use instance variable sparingly. Methods of the class should encapsulate the information and hide it from rest of the class.
+
+There is an excellent example that author uses to convince us of these points.
+
+
+
+
