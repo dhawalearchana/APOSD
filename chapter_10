@@ -1,0 +1,63 @@
+** Define Errors Out Of Existence **
+~~ Section 10.1 ~~
+
+
+Classes with lots of exceptions have complex interfaces, and are probably shallow.
+
+#Exception means an uncommon condition that alters the normal flow of control in the program.
+It occurs due to:
+- bad arguments or configurations
+- invoked method could not complete the operation
+- networking issue
+- Bugs, inconsistencies or unforeseen circumstances
+
+Handling exceptions is difficult - one can try to complete the normal flow, or abort it.
+Aborting might leave the system in an inconsistent state.
+While handling one exception, very often others occur, and handling these is even more difficult.
+
+Before handling, where exactly exception occurred is harder to detect in the first place.
+Try-catch for each line? No - #Readability goes for a toss, and, handlers must be duplicated.
+
+Exception handlers are executed less frequently than normal flow, and therefore, bugs can go undetected for a long time.
+
+It's tempting to throw exception than to deal with difficult situation. It is sometimes promoted in the name of control/flexibility to caller.
+But in your implementation, if you find it hard to figure out how to handle a thing, it's probably harder for a caller.
+
+
+
+~~ Section 10.2 ~~
+
+How to deal with handling exceptions?
+Write code in such a way that things are handled downstream.
+
+Note that throwing errors is NOT an alternative to throwing exception. It complicates the usage of a module.
+
+Few ways of minimizing the exceptions:
+
+1. Define errors out of existence:
+Probably you are already aware of deleting a file on windows - if it is in use, you cannot delete it. You don't even know who is using it. Its frustrating.
+Against this, on most Unices, it is not immediately deleted but marked for deletion.
+Processes using it are allowed to process the data. When all is said and done, file gets deleted.
+
+2. Exception masking: Take care of the exception downstream, even if it means user has to wait longer for the response.
+This works well when you know that user of the module cannot do much anyways than retrying.
+
+
+~~ Section 10.3 ~~
+
+How to deal with handling exceptions? (Continued)
+
+3. Aggregate the exceptions:
+This is opposite of exception masking - so you write this to be a top level element and let exceptions propagate here from downstream.
+A single handler can catch the exceptions, and generate appropriate error response. Message in the exceptions should help generating the error.
+You are trying to fir the exception into larger category of stating what is wrong.
+
+4. Let it crash:
+This is little contrary to popular opinion that app should never crash.
+This should definitely be rare, but much better than handling some errors.
+Running out of memory, critical I/O failure are some examples. There is nothing much you can do.
+Handling such exceptions might be counter-intuitive - they might need more memory.
+
+Lastly, while techniques are okay - the source of most of the exceptions is allowing special cases in the application, and trying to deliver too many things in the same module.
+If this is taken care of, the number of exceptions will be lesser to begin with.
+
