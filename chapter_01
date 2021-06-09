@@ -1,0 +1,36 @@
+~~ Introduction ~~
+~~ Section 1.1 ~~
+
+As any program or system evolves and more features are added, its complexity inevitably increases.
+Simpler design allows us to build larger, more powerful systems before complexity becomes overwhelming.
+
+Modular design helps fight the complexity.
+It means encapsulating the complexity, so that programmers can work on relatively independent components without being exposed to all of the complexity at once.
+
+People tried waterfall model strategy - it demands considerable sized components be designed first, then developed.
+Its hard to understand all the implications beforehand, causing initial design to be full of problems.
+Many of these problems are not apparent until significant implementation is done.
+Racing against time, this results in patchy solutions and reduces scope for adding features seamlessly in the future.
+
+
+~~ Section 1.2 ~~
+
+What works well in an incremental approach such as agile
+Here, a subset is designed, implemented, evaluated, new problems are learned, design adjusted.
+Again a new subset is designed, and the cycle continues.
+
+Incremental means it becomes a continuous process, spans entire lifetime of system.
+Isn't this similar to how you build a #startup or, a #relationships or, #life?
+You are always thinking of design, re-design, what can work, what could be a problem, etc.
+
+Today we mentioned the word complexity many times. In later posts, we are going to
+1. Define the complexity, understand that its important, learn to recognize when its unnecessary, and
+2. Present techniques to minimize this complexity.
+
+You should be warned:
+There are no simple rules for designing good systems, there exists an exception to every principle.
+Use moderation and discretion. The rules are for us, we are not for the rules.
+Anything taken to the extreme will more likely leave you in a bad shape.
+
+Author suggests to use the presented abstract principles with code reviews - easier to find mistakes in someone else's code.
+
