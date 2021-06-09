@@ -1,0 +1,52 @@
+** Different Layer, Different Abstraction **
+
+~~ Section 7.1 ~~
+
+A software system is made up of layers. Each layer should offer a different kind of abstraction.
+
+Otherwise, system is going to have shallow modules, and information leakage will happen.
+
+I heavily used to write pass-through methods - the work of a method is to call another method.
+This unnecessarily adds a layer, without having a differentiable abstraction.
+
+They create dependencies, increase number of interfaces, and usually a result of lack of separation of responsibility.
+This is sometimes done in favor of generalizing classes neglecting the current needs.
+
+Real-world generic example:
+Seen middleman who don't offer much value, passes the entity to someone in authority to make the decision but collect the margin?
+I am sure #startup guys must have.
+
+Note that this is different than interface duplication.
+In a system where one has to choose one of the vendors and then make a call, interface should probably be same.
+This is called dispatcher pattern.
+
+Each implementation of the interface does offer a significant functionality. In case of pass-through methods, they don't.
+
+
+
+~~ Section 7.2 ~~
+
+Decorator pattern is usually recommended when one wants a special purpose behavior from a general purpose class, dynamically.
+Note that these cases should be far lesser than general usage of the class.
+
+Because decorator pattern implementation tends to be shallow, has a large boilerplate code, and contain pass-through methods.
+
+So, if multiple decorator classes can be merged, or use-case can be made generic or functionality can be directly added to the underlying class, you should prefer that option over a decorator.
+
+Next, and obvious one - abstraction over information in the interface should be different than in the implementation. We already covered this to great degree in the information hiding.
+
+
+
+~~ Section 7.3 ~~
+
+The last and trickiest for creating different abstraction in different layers is the pass-through variables.
+Its far more common to pass objects or same payload downstream via a long chain of calls.
+
+Its bad - because every in-between method is aware of that object. Cognitive load, information leakage, difficult to extend, etc - you know these reasons now.
+
+Its tricky - because you need something to share the state between upstream and downstream. If not this object, then what?
+Global state? Author proposes something better - context.
+You can probably have one per object, and reference can be passed around to avoid downsides of a global variable.
+
+Though, references are not going to be enough - many modules would want to update the state. Using them with discipline, predefined policies can avoid unobvious dependencies.
+
