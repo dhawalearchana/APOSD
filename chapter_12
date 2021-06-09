@@ -1,0 +1,23 @@
+** Why Write Comments? The Four Excuses **
+~~ Section 12.1 ~~
+
+Comments on the code is a must have. It hides the complexity, conveys informal nuances, and improve overall design.
+
+Huge number of people either don't believe in writing comments, some don't know how to write good comments. 
+
+Some common reasons:
+1. Good code is self documenting: 
+No. You can only have a function signature - parameters and returns.
+What about the design decisions, assumptions of a state? 
+If #developers will have to read implementation to understand what is going on then there is no abstraction.
+We don't have time for this.
+
+2. Same group goes to other extreme and says, 'I don't have time to write comments':
+In the first few posts, we covered that good design is some time investment, and returns are rather early than you anticipate.
+
+3. Comments become outdated quickly, and can rather be misleading:
+Well, don't you think updating the comments should rather be a solution? Some techniques are there on Day 16.
+
+4. All comments I have seen are worthless:
+This sounds legit. But the reason is - it is not taught in the schools how to write good comments.
+Next few days of posts are going to be focused on how to write good comments.
