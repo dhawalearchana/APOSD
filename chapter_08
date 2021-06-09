@@ -1,0 +1,30 @@
+** Pull Complexity Downwards **
+
+~~ Section 8.1 ~~
+
+Solve the hard problems yourself, and give others easy things to work with.
+We should have simple and consistent interface than a simple implementation.
+
+It's tempting to solve easy problems and limit the users of the module.
+Short term - easy, but many such limitations on multiple modules will amplify the system complexity.
+
+Think of throwing an exception - every caller of the class will have to deal with it.
+
+#configurations parameters move complexity upwards. Some tools have hundreds of those these days.
+These do offer flexibility in some cases, but can easily be an excuse to avoid dealing an important issue and pass them on to someone else.
+
+Some values can be determined by system dynamically, and that also helps in scaling.
+
+Ask if users of the module or #Devops guys can easily figure out the values? Can you have reasonable defaults? Can you figure out these values dynamically?
+
+Of course, don't take it too far.
+Pull the complexity downwards if
+1. It is related to class's existing functionality, or
+2. It will result in many simplifications elsewhere, or
+3. It simplifies the user interface
+
+Goal is to minimize the complexity of the overall system.
+
+
+
+
