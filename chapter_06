@@ -1,0 +1,38 @@
+** General-Purpose Modules are Deeper **
+~~ Section 6.1 ~~
+
+Write general purpose modules or special purpose modules?
+Analogous to:
+#Startups should solve general problems or specific problems?
+
+Answer is - Balance. Isn't that answer to most of the things, haha.
+
+For software, what works well is to make interfaces generic, and implementations specific.
+This results in deeper modules over time, and consistent interfaces for longer duration.
+
+Generality naturally helps with information hiding.
+Something that author does not mention - It is easier to misunderstand the things and definitely demands better documentation.
+
+Author gives example of building a GUI editor. That reminds me of the editor I built in C language years ago, just that it was poorly designed or thought of.
+Please read the book to understand the thin line - what should be generic, and what should be specific.
+
+
+
+~~ Section 6.2 ~~
+
+Its easier to recognize a general purpose class design than to create one.
+
+Remember, general purpose design naturally create deeper modules, and reduce cognitive load of the user of your module.
+It is also pro-extension.
+
+Ask the following questions to find the right balance between general and special purpose choice of an interface:
+
+1. What is the simplest interface that will cover all my current needs:
+Try reducing number of methods, clubbing multiple into one. But if signature is becoming more complex, don't merge them further.
+
+2. How many times this method will be used?
+If you have a single particular case, that's a special purpose method. Are there more such methods? Can you combine those?
+
+3. Is method signature easy to use for my current needs?
+Sometimes, in order to generalize, current cases get compromised. Example: Adding too many "reserved" parameters.
+This is an indication of one going too far into generalizing things, and needs more specificity.
