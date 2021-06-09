@@ -1,0 +1,62 @@
+** Better Together Or Better Apart? **
+~~ Section 9.1 ~~
+
+
+To combine two pieces of functionality into a single module, or to keep them separate?
+
+Based on current trends, it seems far more common to have multiple modules than to combine them.
+
+Subdivision
+- Increases the complexity - harder to keep track of number of components
+- Creates separation - modules are further apart. Developers might miss other modules altogether.
+- Is good when it allows developer to focus on a single task. If they have to touch multiple modules for a single task, that's probably a sign that separation is overdone.
+
+Signs that two #modules are better together
+- They share the information - better because it will help in information hiding
+- They are almost always used together - better because it will reduce cognitive load of a #developer
+- They overlap conceptually - better because together will result in a better abstraction of interface
+
+
+
+~~ Section 9.2 ~~
+
+Write two #modules as separate modules if:
+
+- One belongs to general purpose and other to a special purpose mechanism.
+To the contrary belief, upper level methods should look specific and lower level methods should be generic.
+Doing this, you pull the complexity downwards.
+
+- There is a different kind of an abstraction.
+This is another common cause of increased complepxity in the system. Eg. Single module that has a lot of if-else like structure
+If there are different categories of the functionality, its a sign to split.
+
+Some detailed examples are shared by author in the book.
+
+
+
+~~ Section 9.3 ~~
+
+
+"If method is longer than 10 or 20 lines, split it up!"
+Have you had or read this advice?
+
+It is not very logical thing to do - lines of code of a method shouldn't be conclusive of itself.
+Splitting is:
+- Going to introduce additional interfaces
+- Decreases the readability
+- most probably results in many shallow methods
+
+Its okay to have longer methods so long they have easier interfaces. Deeper methods are rather a good thing.
+
+Rule of thumb: Each method should do one thing, and do it completely.
+
+If you are certain splitting is simplifying the system, you can split the methods in multiple ways:
+1. Have generic low-level method called from implementation of a single interface (Preferred way of splitting)
+2. Expose multiple interfaces to user of your method. (This should be used sparingly)
+
+You should avoid letting users call methods across different abstraction layers.
+
+Also, don't hesitate to join multiple methods - it might eliminate code duplication, minimize dependencies, and hide data structures better.
+
+
+
